@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Детальная новость</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <img class="logo" src="Skipper.png" alt="Логотип">
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="#">О компании</a>
+        <a href="/newsIndex.html">Новости</a>
+        <a href="#">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container news_detail">
+    <h2 id="news-title">Загрузка...</h2>
+    <p id="news-date">Дата публикации: <span id="date"></span></p>
+    <img id="news-image" src="" alt="" style="max-width: 100%; border-radius: 8px;" />
+    <p id="news-content" style="margin-top: 20px;"></p>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="copy">2025</div>
+      <div class="footer-nav">
+        <a href="#">Главная</a>
+        <a href="#">О компании</a>
+        <a href="/newsIndex.html">Новости</a>
+        <a href="#">Контакты</a>
+      </div>
+      <button id="open-form">Оставить заявку</button>
+    </div>
+  </footer>
+
+  <!-- Модалка -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h3>Обратная связь</h3>
+      <form id="feedback-form">
+        <input type="text" id="name" placeholder="Ваше имя *" required />
+        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__ *" required />
+        <textarea id="message" placeholder="Ваше сообщение"></textarea>
+        <button type="submit">Оставить заявку</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+
+    const news = {
+      1: { title: "Новость 1", date: "2025-08-01", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+1", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 1" },
+      2: { title: "Новость 2", date: "2025-08-02", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+2", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 2" },
+      3: { title: "Новость 3", date: "2025-08-03", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+3", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 3" },
+      4: { title: "Новость 4", date: "2025-08-04", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+4", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 4" },
+      5: { title: "Новость 5", date: "2025-08-05", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+5", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 5" },
+      6: { title: "Новость 6", date: "2025-08-06", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+6", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 6" },
+      7: { title: "Новость 7", date: "2025-08-07", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+7", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 7" },
+      8: { title: "Новость 8", date: "2025-08-08", image: "https://api.klakla.ru/images/sports-teams/2425c5a2-f92c-47a7-8072-dc04a10b89b2.png?text=Новость+8", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. 8" }
+    };
+
+    const item = news[id];
+
+    if (item) {
+      document.getElementById("news-title").textContent = item.title;
+      document.getElementById("date").textContent = item.date;
+      document.getElementById("news-image").src = item.image;
+      document.getElementById("news-image").alt = item.title;
+      document.getElementById("news-content").textContent = item.content;
+    } else {
+      document.querySelector("main").innerHTML = "<p>Новость не найдена.</p>";
+    }
+  </script>
+</body>
+</html>

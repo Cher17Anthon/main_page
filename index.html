@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Главная</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img class="logo" src="Skipper.png" alt="ЛОГОТИП">  
+      <div class="burger" id="burger">&#9776;</div>
+      <nav id="nav" class="nav">
+        <a href="#">Главная</a>
+        <a href="#">О компании</a>
+        <a href="#">Новости</a>
+        <a href="#">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="slider">
+    <div class="slider-container">
+      <button class="slide-btn" id="prev">&lt;</button>
+      <div class="slides" id="slides">
+        <img src="https://enzostore.com.tn/c/26-category_default/lee-cooper.jpg" class="slide active" />
+        <img src="https://enzostore.com.tn/c/27-category_default/hugo-boss.jpg" class="slide" />
+        <img src="https://audiohead.ru/upload/iblock/c05/cbqjvt16rxuh6d6mjol83tkh9axj3u5r/cbr_kb_340gm_usb_2377647_2.jpg" class="slide" />
+      </div>
+      <button class="slide-btn" id="next">&gt;</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <section class="news">
+    <a class="link_news_page" href="/newsIndex.html">
+        <h2>Новости компании</h2>
+    </a>
+    <div class="news-grid" id="news-grid"></div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="copy">2025</div>
+      <div class="footer-nav">
+        <a href="#">Главная</a>
+        <a href="#">О компании</a>
+        <a href="#">Новости</a>
+        <a href="#">Контакты</a>
+      </div>
+      <button id="open-form">Оставить заявку</button>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h3>Обратная связь</h3>
+      <form id="feedback-form">
+        <input type="text" id="name" placeholder="Ваше имя *" required />
+        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__ *" required />
+        <textarea id="message" placeholder="Ваше сообщение"></textarea>
+        <button type="submit">Кнопка "Оставить заявку"</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

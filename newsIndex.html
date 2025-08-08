@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Новости</title>
+  <link rel="stylesheet" href="newsStyle.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <img class="logo" src="Skipper.png" alt="Логотип">
+      <div class="burger" id="burger">&#9776;</div>
+      <nav class="nav" id="nav">
+        <a href="#">Главная</a>
+        <a href="#">О компании</a>
+        <a href="#">Новости</a>
+        <a href="#">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="news-section">
+      <div class="container">
+        <h2>Новости компании</h2>
+        <div class="news-grid" id="news-grid"></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="copy">2025</div>
+      <div class="footer-nav">
+        <a href="#">Главная</a>
+        <a href="#">О компании</a>
+        <a href="#">Новости</a>
+        <a href="#">Контакты</a>
+      </div>
+      <button id="open-form">Оставить заявку</button>
+    </div>
+  </footer>
+
+  <!-- Модалка -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h3>Обратная связь</h3>
+      <form id="feedback-form">
+        <input type="text" id="name" placeholder="Ваше имя *" required />
+        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__ *" required />
+        <textarea id="message" placeholder="Ваше сообщение"></textarea>
+        <button type="submit">Оставить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scriptNews.js"></script>
+</body>
+</html>
